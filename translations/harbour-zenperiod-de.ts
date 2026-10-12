@@ -81,17 +81,17 @@
 <context>
     <name>LogPage</name>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="38"/>
+        <location filename="../qml/pages/LogPage.qml" line="54"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="38"/>
+        <location filename="../qml/pages/LogPage.qml" line="54"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="42"/>
+        <location filename="../qml/pages/LogPage.qml" line="40"/>
         <source>Delete entry</source>
         <translation type="unfinished"></translation>
     </message>

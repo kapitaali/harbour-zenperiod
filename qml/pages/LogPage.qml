@@ -35,8 +35,6 @@ Dialog {
         anchors.fill: parent
         contentHeight: column.height
 
-        DialogHeader { id: header; title: dialog.date; acceptText: qsTr("Save"); cancelText: qsTr("Cancel") }
-
         PullDownMenu {
             MenuItem {
                 text: qsTr("Delete entry")
@@ -52,6 +50,8 @@ Dialog {
             id: column
             width: parent.width
             spacing: Theme.paddingMedium
+
+            DialogHeader { id: header; title: dialog.date; acceptText: qsTr("Save"); cancelText: qsTr("Cancel") }
 
             Label {
                 visible: dialog.isFuture
@@ -167,6 +167,9 @@ Dialog {
                 text: dialog.notes
                 onTextChanged: dialog.notes = text
             }
+
+            Item { width: parent.width; height: Theme.paddingLarge }
         }
+        VerticalScrollDecorator {}
     }
 }
