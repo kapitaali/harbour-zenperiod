@@ -101,132 +101,137 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="67"/>
+        <location filename="../qml/pages/LogPage.qml" line="65"/>
         <source>Flow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/LogPage.qml" line="70"/>
+        <source>Only Light and stronger count as a period. Spotting and None do not.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LogPage.qml" line="76"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="71"/>
+        <location filename="../qml/pages/LogPage.qml" line="76"/>
         <source>Spotting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="72"/>
+        <location filename="../qml/pages/LogPage.qml" line="76"/>
         <source>Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="73"/>
+        <location filename="../qml/pages/LogPage.qml" line="76"/>
         <source>Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="74"/>
+        <location filename="../qml/pages/LogPage.qml" line="76"/>
         <source>Heavy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="81"/>
+        <location filename="../qml/pages/LogPage.qml" line="98"/>
         <source>Pain</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="90"/>
+        <location filename="../qml/pages/LogPage.qml" line="123"/>
         <source>Mood</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="93"/>
+        <location filename="../qml/pages/LogPage.qml" line="126"/>
         <source>—</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="94"/>
+        <location filename="../qml/pages/LogPage.qml" line="127"/>
         <source>Calm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="95"/>
+        <location filename="../qml/pages/LogPage.qml" line="128"/>
         <source>Energetic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="96"/>
+        <location filename="../qml/pages/LogPage.qml" line="129"/>
         <source>Irritable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="97"/>
+        <location filename="../qml/pages/LogPage.qml" line="130"/>
         <source>Anxious</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="98"/>
+        <location filename="../qml/pages/LogPage.qml" line="131"/>
         <source>Sad</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="105"/>
+        <location filename="../qml/pages/LogPage.qml" line="138"/>
         <source>Symptoms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="108"/>
+        <location filename="../qml/pages/LogPage.qml" line="141"/>
         <source>Cramps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="108"/>
+        <location filename="../qml/pages/LogPage.qml" line="141"/>
         <source>Headache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="109"/>
+        <location filename="../qml/pages/LogPage.qml" line="142"/>
         <source>Backache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="109"/>
+        <location filename="../qml/pages/LogPage.qml" line="142"/>
         <source>Bloating</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="110"/>
+        <location filename="../qml/pages/LogPage.qml" line="143"/>
         <source>Breast tenderness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="110"/>
+        <location filename="../qml/pages/LogPage.qml" line="143"/>
         <source>Fatigue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="111"/>
+        <location filename="../qml/pages/LogPage.qml" line="144"/>
         <source>Bad sleep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="111"/>
+        <location filename="../qml/pages/LogPage.qml" line="144"/>
         <source>Cravings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="112"/>
+        <location filename="../qml/pages/LogPage.qml" line="145"/>
         <source>Nausea</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="124"/>
+        <location filename="../qml/pages/LogPage.qml" line="157"/>
         <source>Temperature °C (optional)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LogPage.qml" line="133"/>
+        <location filename="../qml/pages/LogPage.qml" line="166"/>
         <source>Notes</source>
         <translation type="unfinished"></translation>
     </message>

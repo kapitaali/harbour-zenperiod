@@ -187,6 +187,10 @@
         <source>Future date: saved for symptoms, but never counted in predictions.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Only Light and stronger count as a period. Spotting and None do not.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>

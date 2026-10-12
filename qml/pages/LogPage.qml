@@ -62,27 +62,60 @@ Dialog {
                 text: qsTr("Future date: saved for symptoms, but never counted in predictions.")
             }
 
-            ComboBox {
-                width: parent.width
-                label: qsTr("Flow")
-                currentIndex: dialog.flow
-                menu: ContextMenu {
-                    MenuItem { text: qsTr("None") }
-                    MenuItem { text: qsTr("Spotting") }
-                    MenuItem { text: qsTr("Light") }
-                    MenuItem { text: qsTr("Medium") }
-                    MenuItem { text: qsTr("Heavy") }
+            SectionHeader { text: qsTr("Flow") }
+            Label {
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                wrapMode: Text.Wrap
+                color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeSmall
+                text: qsTr("Only Light and stronger count as a period. Spotting and None do not.")
+            }
+            Column {
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                spacing: Theme.paddingSmall
+                Repeater {
+                    model: [qsTr("None"), qsTr("Spotting"), qsTr("Light"), qsTr("Medium"), qsTr("Heavy")]
+                    delegate: BackgroundItem {
+                        width: parent.width
+                        height: Theme.itemSizeMedium
+                        Rectangle {
+                            anchors.fill: parent
+                            radius: 6
+                            color: dialog.flow === index
+                                   ? Theme.rgba(Theme.highlightBackgroundColor, 0.5)
+                                   : "transparent"
+                        }
+                        Label {
+                            x: Theme.horizontalPageMargin
+                            anchors.verticalCenter: parent.verticalCenter
+                            color: dialog.flow === index ? Theme.highlightColor : Theme.primaryColor
+                            text: modelData
+                        }
+                        onClicked: dialog.flow = index
+                    }
                 }
-                onCurrentIndexChanged: dialog.flow = currentIndex
             }
 
-            Slider {
-                width: parent.width
-                label: qsTr("Pain")
-                minimumValue: 0; maximumValue: 10; stepSize: 1
-                value: dialog.pain
-                valueText: value
-                onValueChanged: dialog.pain = Math.round(value)
+            SectionHeader { text: qsTr("Pain") }
+            Row {
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                spacing: Theme.paddingMedium
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-remove"
+                    onClicked: dialog.pain = Math.max(0, dialog.pain - 1)
+                }
+                Label {
+                    width: parent.width - 2 * Theme.itemSizeSmall - 2 * parent.spacing
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    color: Theme.primaryColor
+                    text: dialog.pain
+                }
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-add"
+                    onClicked: dialog.pain = Math.min(10, dialog.pain + 1)
+                }
             }
 
             ComboBox {
