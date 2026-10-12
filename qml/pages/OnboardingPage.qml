@@ -61,25 +61,45 @@ Page {
 
             Row {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
-                spacing: Theme.paddingLarge
-                Button { text: "−"; onClicked: page.cycle = Math.max(15, page.cycle - 1) }
+                spacing: Theme.paddingMedium
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-remove"
+                    onClicked: page.cycle = Math.max(15, page.cycle - 1)
+                }
                 Label {
+                    width: parent.width - 2 * Theme.itemSizeSmall - 2 * parent.spacing
+                    horizontalAlignment: Text.AlignHCenter
                     anchors.verticalCenter: parent.verticalCenter
                     color: Theme.primaryColor
                     text: qsTr("Cycle: %n day(s)", "", page.cycle)
                 }
-                Button { text: "+"; onClicked: page.cycle = Math.min(60, page.cycle + 1) }
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-add"
+                    onClicked: page.cycle = Math.min(60, page.cycle + 1)
+                }
             }
             Row {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
-                spacing: Theme.paddingLarge
-                Button { text: "−"; onClicked: page.period = Math.max(1, page.period - 1) }
+                spacing: Theme.paddingMedium
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-remove"
+                    onClicked: page.period = Math.max(1, page.period - 1)
+                }
                 Label {
+                    width: parent.width - 2 * Theme.itemSizeSmall - 2 * parent.spacing
+                    horizontalAlignment: Text.AlignHCenter
                     anchors.verticalCenter: parent.verticalCenter
                     color: Theme.primaryColor
                     text: qsTr("Period: %n day(s)", "", page.period)
                 }
-                Button { text: "+"; onClicked: page.period = Math.min(14, page.period + 1) }
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-add"
+                    onClicked: page.period = Math.min(14, page.period + 1)
+                }
             }
 
             Button {

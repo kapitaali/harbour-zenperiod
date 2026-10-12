@@ -324,12 +324,6 @@
         <source>15–60 days, used until you log 2+ periods</source>
         <translation type="unfinished"></translation>
     </message>
-    <message numerus="yes">
-        <source>Period: %n day(s), 1–14</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
     <message>
         <source>Privacy</source>
         <translation type="unfinished"></translation>
@@ -347,10 +341,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <source>Luteal phase: %n day(s), 10–18</source>
+        <source>Period: %n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Bleeding days, 1–14</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Luteal phase: %n day(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Ovulation ≈ next period minus this, 10–18</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

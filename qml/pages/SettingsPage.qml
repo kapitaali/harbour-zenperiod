@@ -24,53 +24,75 @@ Page {
             }
             Row {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
-                spacing: Theme.paddingLarge
-                Button {
-                    text: "−"
+                spacing: Theme.paddingMedium
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-remove"
                     onClicked: store.usualCycle = store.usualCycle - 1
                 }
-                Button {
-                    text: "+"
-                    onClicked: store.usualCycle = store.usualCycle + 1
-                }
                 Label {
+                    width: parent.width - 2 * Theme.itemSizeSmall - 2 * parent.spacing
+                    wrapMode: Text.Wrap
                     anchors.verticalCenter: parent.verticalCenter
                     color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeSmall
                     text: qsTr("15–60 days, used until you log 2+ periods")
                 }
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-add"
+                    onClicked: store.usualCycle = store.usualCycle + 1
+                }
+            }
+            Label {
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                color: Theme.primaryColor
+                text: qsTr("Period: %n day(s)", "", store.usualPeriod)
             }
             Row {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
-                spacing: Theme.paddingLarge
-                Button {
-                    text: "−"
+                spacing: Theme.paddingMedium
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-remove"
                     onClicked: store.usualPeriod = store.usualPeriod - 1
                 }
-                Button {
-                    text: "+"
-                    onClicked: store.usualPeriod = store.usualPeriod + 1
-                }
                 Label {
+                    width: parent.width - 2 * Theme.itemSizeSmall - 2 * parent.spacing
+                    wrapMode: Text.Wrap
                     anchors.verticalCenter: parent.verticalCenter
                     color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeSmall
-                    text: qsTr("Period: %n day(s), 1–14", "", store.usualPeriod)
+                    text: qsTr("Bleeding days, 1–14")
                 }
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-add"
+                    onClicked: store.usualPeriod = store.usualPeriod + 1
+                }
+            }
+            Label {
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                color: Theme.primaryColor
+                text: qsTr("Luteal phase: %n day(s)", "", store.usualLuteal)
             }
             Row {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
-                spacing: Theme.paddingLarge
-                Button {
-                    text: "−"
+                spacing: Theme.paddingMedium
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-remove"
                     onClicked: store.usualLuteal = store.usualLuteal - 1
                 }
-                Button {
-                    text: "+"
-                    onClicked: store.usualLuteal = store.usualLuteal + 1
-                }
                 Label {
+                    width: parent.width - 2 * Theme.itemSizeSmall - 2 * parent.spacing
+                    wrapMode: Text.Wrap
                     anchors.verticalCenter: parent.verticalCenter
                     color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeSmall
-                    text: qsTr("Luteal phase: %n day(s), 10–18", "", store.usualLuteal)
+                    text: qsTr("Ovulation ≈ next period minus this, 10–18")
+                }
+                IconButton {
+                    width: Theme.itemSizeSmall; height: Theme.itemSizeSmall
+                    icon.source: "image://theme/icon-m-add"
+                    onClicked: store.usualLuteal = store.usualLuteal + 1
                 }
             }
 

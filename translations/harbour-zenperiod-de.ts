@@ -345,31 +345,31 @@
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/OnboardingPage.qml" line="69"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="75"/>
         <source>Cycle: %n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/OnboardingPage.qml" line="80"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="96"/>
         <source>Period: %n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="87"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="107"/>
         <source>Start tracking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="99"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="119"/>
         <source>You can change these later in Settings. To skip, use the pulley menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="105"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="125"/>
         <source>Skip for now</source>
         <translation type="unfinished"></translation>
     </message>
@@ -394,41 +394,51 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="39"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="38"/>
         <source>15–60 days, used until you log 2+ periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
-        <source>Period: %n day(s), 1–14</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../qml/pages/SettingsPage.qml" line="73"/>
-        <source>Luteal phase: %n day(s), 10–18</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="49"/>
+        <source>Period: %n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
+        <source>Bleeding days, 1–14</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <source>Luteal phase: %n day(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
+        <source>Ovulation ≈ next period minus this, 10–18</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Privacy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="103"/>
         <source>Local-only: data stays in the app sandbox SQLite file. No account, no network permission, no analytics. Predictions are on-device and not medical advice.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="107"/>
         <source>Wipe all data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="109"/>
         <source>Deleting all entries</source>
         <translation type="unfinished"></translation>
     </message>
