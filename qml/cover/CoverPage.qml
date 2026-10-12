@@ -2,6 +2,13 @@ import QtQuick 2.6
 import Sailfish.Silica 1.0
 
 CoverBackground {
+    id: cover
+
+    // Injected by harbour-zenperiod.qml so the action can navigate.
+    // Cover QML has no ambient pageStack scope, so an explicit reference
+    // is the only reliable path (verified pattern, not ambient lookup).
+    property var appWindow
+
     property var pred: store.predictions()
 
     Connections {
@@ -44,11 +51,13 @@ CoverBackground {
         CoverAction {
             iconSource: "image://theme/icon-cover-new"
             onTriggered: {
-                var app = applicationWindow
-                if (app) {
-                    app.activate()
-                    app.pageStack.push(Qt.resolvedUrl("../pages/LogPage.qml"))
-                }
+                if (!cover.appWindow)
+                    return
+                var stack = cover.appWindow.pageStack
+                var cur = stack.currentPage
+                // Never stack duplicate log dialogs.
+                if (!cur || cur.objectName !== "LogPage")
+                    stack.push(Qt.resolvedUrl("../pages/LogPage.qml"))
             }
         }
     }

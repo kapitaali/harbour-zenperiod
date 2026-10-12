@@ -4,7 +4,9 @@ import "../backend/cycle.js" as Cycle
 
 Dialog {
     id: dialog
+    objectName: "LogPage"
     property string date: Cycle.todayIso()
+    property bool isFuture: date > Cycle.todayIso()
     property var existing: store.getDay(date)
 
     property int flow: existing.flow || 0
@@ -50,6 +52,15 @@ Dialog {
             id: column
             width: parent.width
             spacing: Theme.paddingMedium
+
+            Label {
+                visible: dialog.isFuture
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                wrapMode: Text.Wrap
+                color: Theme.secondaryColor
+                font.pixelSize: Theme.fontSizeSmall
+                text: qsTr("Future date: saved for symptoms, but never counted in predictions.")
+            }
 
             ComboBox {
                 width: parent.width

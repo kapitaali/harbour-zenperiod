@@ -42,6 +42,7 @@ bool CycleStore::init()
             const int v = q.value(1).toInt();
             if (k == "usualCycle" && v >= 15 && v <= 60) m_usualCycle = v;
             if (k == "usualPeriod" && v >= 1 && v <= 14) m_usualPeriod = v;
+            if (k == "usualLuteal" && v >= 10 && v <= 18) m_usualLuteal = v;
         }
     }
     return true;
@@ -81,6 +82,42 @@ void CycleStore::setUsualPeriod(int v)
     q.prepare("INSERT OR REPLACE INTO settings(key, value) VALUES('usualPeriod', ?)");
     q.addBindValue(v);
     q.exec();
+    emit settingsChanged();
+    emit dataChanged();
+}
+
+void CycleStore::setUsualLuteal(int v)
+{
+    if (v < 10 || v > 18 || v == m_usualLuteal) return;
+    m_usualLuteal = v;
+    QSqlQuery q(QSqlDatabase::database(kConn));
+    q.prepare("INSERT OR REPLACE INTO settings(key, value) VALUES('usualLuteal', ?)");
+    q.addBindValue(v);
+    q.exec();
+    emit settingsChanged();
+    emit dataChanged();
+}
+
+bool CycleStore::isOnboarded() const
+{
+    QSqlQuery q(QSqlDatabase::database(kConn));
+    q.prepare("SELECT value FROM settings WHERE key='onboarded'");
+    if (q.exec() && q.next())
+        return q.value(0).toString() == "1";
+    return false;
+}
+
+void CycleStore::completeOnboarding(const QString &lastStart, int cycle, int period)
+{
+    setUsualCycle(qBound(15, cycle, 60));
+    setUsualPeriod(qBound(1, period, 14));
+    if (!lastStart.isEmpty()) {
+        const QDate d = QDate::fromString(lastStart, Qt::ISODate);
+        if (d.isValid() && d <= QDate::currentDate() && !getDay(lastStart)["logged"].toBool())
+            saveDay(lastStart, 3, 0, "", "", std::numeric_limits<double>::quiet_NaN(), "");
+    }
+    QSqlQuery q(QSqlDatabase::database(kConn));
+    q.exec("INSERT OR REPLACE INTO settings(key, value) VALUES('onboarded', '1')");
     emit settingsChanged();
     emit dataChanged();
 }
@@ -154,10 +191,11 @@ QVariantList CycleStore::loggedPeriodStarts() const
     QStringList periodDays;
     while (q.next()) periodDays << q.value(0).toString();
     QSet<QString> daySet = QSet<QString>::fromList(periodDays);
+    const QDate today = QDate::currentDate();
     QVariantList starts;
     for (const QString &d : periodDays) {
         const QDate date = QDate::fromString(d, Qt::ISODate);
-        if (!date.isValid()) continue;
+        if (!date.isValid() || date > today) continue; // future logs never seed predictions
         const QString prev = date.addDays(-1).toString(Qt::ISODate);
         if (!daySet.contains(prev))
             starts << d;
@@ -203,6 +241,9 @@ QVariantMap CycleStore::predictions() const
     p["next3"] = next.addDays(2 * qRound(avgCycle)).toString(Qt::ISODate);
     p["pmsStart"] = pmsStart.toString(Qt::ISODate);
     p["pmsEnd"] = pmsEnd.toString(Qt::ISODate);
+    p["ovulation"] = next.addDays(-m_usualLuteal).toString(Qt::ISODate);
+    p["ovulation2"] = next.addDays(qRound(avgCycle) - m_usualLuteal).toString(Qt::ISODate);
+    p["ovulation3"] = next.addDays(2 * qRound(avgCycle) - m_usualLuteal).toString(Qt::ISODate);
     p["cycleDay"] = cycleDay;
     p["daysToNext"] = daysToNext;
     p["hasHistory"] = dates.size() >= 2;
@@ -285,6 +326,21 @@ bool CycleStore::isPredictedPms(const QString &isoDate) const
     for (int k = 0; k < 3; ++k) {
         const QDate s = next.addDays(k * cyc - 7);
         if (d >= s && d < s.addDays(7))
+            return true;
+    }
+    return false;
+}
+
+bool CycleStore::isPredictedOvulation(const QString &isoDate) const
+{
+    const QDate d = QDate::fromString(isoDate, Qt::ISODate);
+    if (!d.isValid()) return false;
+    const QVariantMap p = predictions();
+    const QDate next = QDate::fromString(p["nextPeriod"].toString(), Qt::ISODate);
+    if (!next.isValid()) return false;
+    const int cyc = qMax(1, qRound(p["avgCycle"].toDouble()));
+    for (int k = 0; k < 3; ++k) {
+        if (d == next.addDays(k * cyc - m_usualLuteal))
             return true;
     }
     return false;

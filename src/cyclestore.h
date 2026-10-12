@@ -21,8 +21,10 @@ public:
 
     int usualCycle() const { return m_usualCycle; }
     int usualPeriod() const { return m_usualPeriod; }
+    int usualLuteal() const { return m_usualLuteal; }
     void setUsualCycle(int v);
     void setUsualPeriod(int v);
+    void setUsualLuteal(int v);
 
     Q_INVOKABLE QVariantMap getDay(const QString &isoDate) const;
     Q_INVOKABLE bool saveDay(const QString &isoDate, int flow, int pain,
@@ -35,6 +37,9 @@ public:
     Q_INVOKABLE QVariantMap stats() const;
     Q_INVOKABLE bool isPredictedPeriod(const QString &isoDate) const;
     Q_INVOKABLE bool isPredictedPms(const QString &isoDate) const;
+    Q_INVOKABLE bool isPredictedOvulation(const QString &isoDate) const;
+    Q_INVOKABLE bool isOnboarded() const;
+    Q_INVOKABLE void completeOnboarding(const QString &lastStart, int cycle, int period);
     Q_INVOKABLE void clearAll();
 
 Q_SIGNALS:
@@ -47,6 +52,7 @@ private:
     QVariantList loggedPeriodStarts() const;
     int m_usualCycle = 28;
     int m_usualPeriod = 5;
+    int m_usualLuteal = 14;
 };
 
 #endif

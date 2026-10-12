@@ -17,10 +17,10 @@ Page {
             PageHeader { title: qsTr("Settings") }
 
             SectionHeader { text: qsTr("Cycle defaults") }
-            TextSwitch {
+            Label {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                color: Theme.primaryColor
                 text: qsTr("Usual cycle: %n day(s)", "", store.usualCycle)
-                checked: false
             }
             Row {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
@@ -54,6 +54,23 @@ Page {
                     anchors.verticalCenter: parent.verticalCenter
                     color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeSmall
                     text: qsTr("Period: %n day(s), 1–14", "", store.usualPeriod)
+                }
+            }
+            Row {
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                spacing: Theme.paddingLarge
+                Button {
+                    text: "−"
+                    onClicked: store.usualLuteal = store.usualLuteal - 1
+                }
+                Button {
+                    text: "+"
+                    onClicked: store.usualLuteal = store.usualLuteal + 1
+                }
+                Label {
+                    anchors.verticalCenter: parent.verticalCenter
+                    color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeSmall
+                    text: qsTr("Luteal phase: %n day(s), 10–18", "", store.usualLuteal)
                 }
             }
 

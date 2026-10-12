@@ -10,6 +10,7 @@ HEADERS += src/cyclestore.h
 DISTFILES += qml/harbour-zenperiod.qml \
              qml/cover/CoverPage.qml \
              qml/pages/MainPage.qml \
+             qml/pages/OnboardingPage.qml \
              qml/pages/LogPage.qml \
              qml/pages/HistoryPage.qml \
              qml/pages/SettingsPage.qml \

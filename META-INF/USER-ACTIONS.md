@@ -2,16 +2,18 @@
 Domain primer: Cycle Day 1 = first bleeding day. Cycle length = Day 1 to next Day 1. PMS window = ~5-7 days before next period.
 
 ## 1. First run / onboarding
-- Open app, read local-only privacy statement (no account, no network).
-- Set last period start, usual period length (e.g. 5d), usual cycle length (e.g. 28d).
-- Land on main calendar.
+- Fresh install opens the Welcome page (not the calendar).
+- Read local-only statement, pick last period start (DatePicker, defaults to today), set usual cycle/period with +/-.
+- Future start date blocks Start; "Skip for now" (pulley) completes without logging.
+- After Start/Skip, calendar shows; relaunch never shows Welcome again (until wipe + reinstall).
+- Onboarding logs the start date as one medium-flow day: check predictions use it as last start.
 
 ## 2. Log period day
 - Tap today / any date, log flow: none, spotting, light, medium, heavy, clots.
 - Mark period start/end if auto-detect fails.
 - Save, re-open, edit same day, delete log.
 - Log retroactively (10 / 30 / 90 days ago).
-- Attempt future date: expect block or warning.
+- Attempt future date: entry allowed but shows a warning row, and a future flow>=2 day must NOT move predictions (verify next-period date unchanged).
 
 ## 3. Log PMS / symptoms
 - Pain: cramps 0-10, backache, headache.
@@ -22,13 +24,14 @@ Domain primer: Cycle Day 1 = first bleeding day. Cycle length = Day 1 to next Da
 - Verify persistence after restart + calendar marker.
 
 ## 4. Calendar
-- Swipe months back/forward, jump to today.
-- Verify states: period day, predicted period, ovulation, PMS window, symptom dot, today ring.
+- Swipe months back/forward, "Today" pulley item jumps back to the current month.
+- Verify states: period day, predicted period, ovulation bar, PMS window, symptom dot, today ring.
 - Tap any day for detail view.
 
 ## 5. Predictions / home status
 - View current cycle day (e.g. Day 14/28), days to next period, late flag if overdue.
-- View next 3 predicted periods + ovulation + PMS window.
+- View next 3 predicted periods + ovulation date (~next minus luteal, default 14) + PMS window.
+- Change luteal 10-18 in Settings, verify ovulation date shifts the same amount.
 - Test with regular (28,28,28), irregular (24,32,27), single-cycle, and empty history.
 
 ## 6. History / stats

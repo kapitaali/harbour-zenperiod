@@ -45,10 +45,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Predicted: %1, %2, %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Past periods</source>
         <translation type="unfinished"></translation>
     </message>
@@ -57,6 +53,10 @@
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Predicted periods: %1, %2, %3 · ovulation ~%4</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -177,6 +177,10 @@
         <source>Notes</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Future date: saved for symptoms, but never counted in predictions.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>
@@ -221,15 +225,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Next: %1 · PMS %2–%3 · predictions are not medical advice</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Legend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Solid = logged period · tinted = predicted period · shaded = PMS window · dot = other symptoms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -242,6 +238,69 @@
     </message>
     <message>
         <source>Period %1 day(s) overdue — predictions are not medical advice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next: %1 · Ovulation ~%2 · PMS %3–%4 · predictions are not medical advice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · dot = other symptoms</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OnboardingPage</name>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ZenPeriod keeps everything on this phone: no account, no cloud, no tracking. Predictions are computed on-device and are not medical advice.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When did your last period start?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last period start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick today or a past date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Usual lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Cycle: %n day(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>Period: %n day(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Start tracking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can change these later in Settings. To skip, use the pulley menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip for now</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -286,6 +345,12 @@
     <message>
         <source>Deleting all entries</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Luteal phase: %n day(s), 10–18</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>

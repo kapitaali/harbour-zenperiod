@@ -31,7 +31,7 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
                 wrapMode: Text.Wrap; color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeSmall
-                text: qsTr("Predicted: %1, %2, %3").arg(pred.nextPeriod).arg(pred.next2).arg(pred.next3)
+                text: qsTr("Predicted periods: %1, %2, %3 · ovulation ~%4").arg(pred.nextPeriod).arg(pred.next2).arg(pred.next3).arg(pred.ovulation)
             }
             SectionHeader { text: qsTr("Past periods") }
         }

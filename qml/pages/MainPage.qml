@@ -5,6 +5,7 @@ import "../backend/cycle.js" as Cycle
 
 Page {
     id: page
+    objectName: "MainPage"
 
     property int shownYear: new Date().getFullYear()
     property int shownMonth: new Date().getMonth() + 1
@@ -50,6 +51,14 @@ Page {
 
         PullDownMenu {
             MenuItem { text: qsTr("Log today"); onClicked: pageStack.push(Qt.resolvedUrl("LogPage.qml", { date: Cycle.todayIso() })) }
+            MenuItem {
+                text: qsTr("Today")
+                onClicked: {
+                    var t = new Date()
+                    page.shownYear = t.getFullYear()
+                    page.shownMonth = t.getMonth() + 1
+                }
+            }
             MenuItem { text: qsTr("History"); onClicked: pageStack.push(Qt.resolvedUrl("HistoryPage.qml")) }
             MenuItem { text: qsTr("Settings"); onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml")) }
         }
@@ -78,8 +87,8 @@ Page {
                 wrapMode: Text.Wrap
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
-                text: qsTr("Next: %1 · PMS %2–%3 · predictions are not medical advice")
-                      .arg(pred.nextPeriod).arg(pred.pmsStart).arg(pred.pmsEnd)
+                text: qsTr("Next: %1 · Ovulation ~%2 · PMS %3–%4 · predictions are not medical advice")
+                      .arg(pred.nextPeriod).arg(pred.ovulation).arg(pred.pmsStart).arg(pred.pmsEnd)
             }
 
             Row {
@@ -134,6 +143,7 @@ Page {
                         property bool isPeriod: logged && info.flow >= 2
                         property bool predP: modelData !== "" && store.isPredictedPeriod(modelData)
                         property bool predS: modelData !== "" && store.isPredictedPms(modelData)
+                        property bool predO: modelData !== "" && store.isPredictedOvulation(modelData)
                         Rectangle {
                             anchors.fill: parent
                             radius: 6
@@ -157,6 +167,13 @@ Page {
                             width: 6; height: 6; radius: 3
                             color: Theme.secondaryColor
                         }
+                        // ovulation bar
+                        Rectangle {
+                            visible: cell.predO && !cell.isPeriod
+                            anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 2 }
+                            width: parent.width * 0.5; height: 3; radius: 1
+                            color: Theme.highlightColor
+                        }
                         onClicked: pageStack.push(Qt.resolvedUrl("LogPage.qml"), { date: modelData })
                     }
                 }
@@ -166,7 +183,7 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
                 wrapMode: Text.Wrap; color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Solid = logged period · tinted = predicted period · shaded = PMS window · dot = other symptoms")
+                text: qsTr("Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · dot = other symptoms")
             }
             VerticalScrollDecorator {}
         }

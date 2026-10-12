@@ -6,6 +6,9 @@ function todayIso() {
     var t = new Date()
     return iso(t.getFullYear(), t.getMonth() + 1, t.getDate())
 }
+function dateToIso(d) {
+    return iso(d.getFullYear(), d.getMonth() + 1, d.getDate())
+}
 function addDays(isoDate, n) {
     var p = isoDate.split("-")
     var d = new Date(p[0], p[1] - 1, p[2])
