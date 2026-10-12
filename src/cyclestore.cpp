@@ -267,6 +267,16 @@ QVariantList CycleStore::history(int limit) const
             m["cycleLength"] = dates[i].daysTo(dates[i + 1]);
         else
             m["cycleLength"] = 0;
+        // Consecutive flow>=2 days from this start: what "the period" lasted.
+        int len = 0;
+        QDate d = dates[i];
+        for (int k = 0; k < 15; ++k) {
+            if (getDay(d.toString(Qt::ISODate))["flow"].toInt() >= 2) {
+                ++len;
+                d = d.addDays(1);
+            } else break;
+        }
+        m["days"] = len;
         out << m;
     }
     return out;

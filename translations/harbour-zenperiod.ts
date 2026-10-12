@@ -48,15 +48,21 @@
         <source>Past periods</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Predicted periods: %1, %2, %3 · ovulation ~%4</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <source>%n day cycle</source>
+        <source>%n-day period</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
-    <message>
-        <source>Predicted periods: %1, %2, %3 · ovulation ~%4</source>
-        <translation type="unfinished"></translation>
+    <message numerus="yes">
+        <source>%n-day cycle</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -249,7 +255,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · dot = other symptoms</source>
+        <source>Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · ring = spotting (not a period) · dot = other symptoms</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

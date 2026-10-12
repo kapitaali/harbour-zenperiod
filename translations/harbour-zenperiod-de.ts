@@ -64,8 +64,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/HistoryPage.qml" line="44"/>
-        <source>%n day cycle</source>
+        <location filename="../qml/pages/HistoryPage.qml" line="45"/>
+        <source>%n-day period</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../qml/pages/HistoryPage.qml" line="46"/>
+        <source>%n-day cycle</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
@@ -302,12 +309,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="203"/>
-        <source>Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · dot = other symptoms</source>
+        <location filename="../qml/pages/MainPage.qml" line="213"/>
+        <source>Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · ring = spotting (not a period) · dot = other symptoms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="199"/>
+        <location filename="../qml/pages/MainPage.qml" line="209"/>
         <source>Legend</source>
         <translation type="unfinished"></translation>
     </message>

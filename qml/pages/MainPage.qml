@@ -149,6 +149,7 @@ Page {
                         }
                         property bool logged: info && info.logged
                         property bool isPeriod: logged && info.flow >= 2
+                        property bool isSpotting: logged && info.flow === 1
                         property bool predP: {
                             page.dataVersion
                             return modelData !== "" && store.isPredictedPeriod(modelData)
@@ -177,12 +178,21 @@ Page {
                             font.pixelSize: Theme.fontSizeSmall
                             text: modelData !== "" ? Number(modelData.split("-")[2]) : ""
                         }
-                        // symptom dot
+                        // symptom dot (logged, but no flow)
                         Rectangle {
-                            visible: cell.logged && !cell.isPeriod
+                            visible: cell.logged && !cell.isPeriod && !cell.isSpotting
                             anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 6 }
-                            width: 10; height: 10; radius: 5
+                            width: 12; height: 12; radius: 6
                             color: Theme.primaryColor
+                        }
+                        // spotting ring: logged, but too light to start a period
+                        Rectangle {
+                            visible: cell.isSpotting
+                            anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 6 }
+                            width: 12; height: 12; radius: 6
+                            color: "transparent"
+                            border.color: Theme.primaryColor
+                            border.width: 2
                         }
                         // ovulation bar
                         Rectangle {
@@ -200,7 +210,7 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
                 wrapMode: Text.Wrap; color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · dot = other symptoms")
+                text: qsTr("Solid = logged period · tinted = predicted period · shaded = PMS window · bar = ovulation · ring = spotting (not a period) · dot = other symptoms")
             }
             VerticalScrollDecorator {}
         }

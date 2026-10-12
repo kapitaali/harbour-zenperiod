@@ -41,7 +41,9 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin; anchors.verticalCenter: parent.verticalCenter
                 color: Theme.primaryColor
-                text: modelData.start + (modelData.cycleLength > 0 ? " · " + qsTr("%n day cycle", "", modelData.cycleLength) : "")
+                text: modelData.start
+                      + (modelData.days > 0 ? " · " + qsTr("%n-day period", "", modelData.days) : "")
+                      + (modelData.cycleLength > 0 ? " · " + qsTr("%n-day cycle", "", modelData.cycleLength) : "")
             }
             onClicked: pageStack.push(Qt.resolvedUrl("LogPage.qml"), { date: modelData.start })
         }
