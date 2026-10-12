@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Name=ZenPeriod
+Icon=harbour-zenperiod
+Exec=harbour-zenperiod
+
+[X-Sailjail]
+Permissions=Notifications
+OrganizationName=org.zenperiod
+ApplicationName=harbour-zenperiod
