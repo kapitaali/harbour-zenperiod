@@ -335,41 +335,41 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="48"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="57"/>
         <source>Pick today or a past date.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="51"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="60"/>
         <source>Usual lengths</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/OnboardingPage.qml" line="60"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="69"/>
         <source>Cycle: %n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/OnboardingPage.qml" line="71"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="80"/>
         <source>Period: %n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="78"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="87"/>
         <source>Start tracking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="90"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="99"/>
         <source>You can change these later in Settings. To skip, use the pulley menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/OnboardingPage.qml" line="96"/>
+        <location filename="../qml/pages/OnboardingPage.qml" line="105"/>
         <source>Skip for now</source>
         <translation type="unfinished"></translation>
     </message>

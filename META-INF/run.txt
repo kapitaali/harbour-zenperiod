@@ -1,0 +1,19 @@
+/usr/bin/harbour-zenperiod 
+[D] unknown:0 - Using Wayland-EGL
+library "libselinux.so" not found
+Could not open module param file '/sys/module/mali_kbase/parameters/large_page_conf'
+[ 6843.705606] (harbour-zenperi) [MEMPROF] Memory instrumentation via debugfs enabled
+[W] unknown:10 - file:///usr/share/harbour-zenperiod/qml/harbour-zenperiod.qml:10:52: Type OnboardingPage unavailable 
+         property Component onboardingPage: Component { OnboardingPage {} } 
+                                                        ^
+[W] unknown:35 - file:///usr/share/harbour-zenperiod/qml/pages/OnboardingPage.qml:35:13: DatePickerButton is not a type 
+                 DatePickerButton { 
+                 ^
+library "/vendor/lib64/egl/mt6858/libGLES_mali.so" needed or dlopened by "(unknown)" is not accessible for the namespace "(default)"
+library "/vendor/lib64/egl/mt6858/libGLES_mali.so" ("/vendor/lib64/egl/mt6858/libGLES_mali.so") needed or dlopened by "(unknown)" is not accessible for the namespace: [name="(default)", ld_library_paths="/usr/libexec/droid-hybris/system/lib64:/system/lib64:/vendor/lib64", default_library_paths="/system/lib64:/system_ext/lib64", permitted_paths="/system/lib64/drm:/system/lib64/extractors:/system/lib64/hw:/system_ext/lib64:/usr/libexec/droid-hybris/system/lib64:/system/framework:/system/app:/system/priv-app:/system_ext/framework:/system_ext/app:/system_ext/priv-app:/vendor/framework:/vendor/app:/vendor/priv-app:/system/vendor/framework:/system/vendor/app:/system/vendor/priv-app:/odm/framework:/odm/app:/odm/priv-app:/oem/app:/product/framework:/product/app:/product/priv-app:/data:/mnt/expand:/apex/com.android.runtime/lib64/bionic:/system/lib64/bootstrap"]
+library "/vendor/lib64/hw/mt6858/mapper.mediatek.so" needed or dlopened by "(unknown)" is not accessible for the namespace "(default)"
+library "/vendor/lib64/hw/mt6858/mapper.mediatek.so" ("/vendor/lib64/hw/mt6858/mapper.mediatek.so") needed or dlopened by "(unknown)" is not accessible for the namespace: [name="(default)", ld_library_paths="/usr/libexec/droid-hybris/system/lib64:/system/lib64:/vendor/lib64", default_library_paths="/system/lib64:/system_ext/lib64", permitted_paths="/system/lib64/drm:/system/lib64/extractors:/system/lib64/hw:/system_ext/lib64:/usr/libexec/droid-hybris/system/lib64:/system/framework:/system/app:/system/priv-app:/system_ext/framework:/system_ext/app:/system_ext/priv-app:/vendor/framework:/vendor/app:/vendor/priv-app:/system/vendor/framework:/system/vendor/app:/system/vendor/priv-app:/odm/framework:/odm/app:/odm/priv-app:/oem/app:/product/framework:/product/app:/product/priv-app:/data:/mnt/expand:/apex/com.android.runtime/lib64/bionic:/system/lib64/bootstrap"]
+invalid handle: (nil)
+invalid handle: (nil)
+[ 6862.577592] (harbour-zenperi) EGL: eglp_unload_callback <unknown>
+==>[WARN] EGLDisplay (0x5d97d51ff0) was not properly terminated by the application before unloading the driver.

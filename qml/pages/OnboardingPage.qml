@@ -32,11 +32,20 @@ Page {
 
             SectionHeader { text: qsTr("When did your last period start?") }
 
-            DatePickerButton {
+            ValueButton {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
-                title: qsTr("Last period start")
-                date: new Date()
-                onDateChanged: page.startDate = Cycle.dateToIso(date)
+                label: qsTr("Last period start")
+                value: new Date(page.startDate + "T00:00:00").toLocaleDateString()
+                onClicked: {
+                    var dialog = pageStack.push(dateDialog, { date: new Date(page.startDate + "T00:00:00") })
+                    dialog.accepted.connect(function() {
+                        page.startDate = Cycle.dateToIso(dialog.date)
+                    })
+                }
+            }
+            Component {
+                id: dateDialog
+                DatePickerDialog {}
             }
 
             Label {
