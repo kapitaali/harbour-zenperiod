@@ -196,8 +196,14 @@ QVariantList CycleStore::loggedPeriodStarts() const
     for (const QString &d : periodDays) {
         const QDate date = QDate::fromString(d, Qt::ISODate);
         if (!date.isValid() || date > today) continue; // future logs never seed predictions
-        const QString prev = date.addDays(-1).toString(Qt::ISODate);
-        if (!daySet.contains(prev))
+        bool fresh = true;
+        for (int k = 1; k <= 2; ++k) {
+            if (daySet.contains(date.addDays(-k).toString(Qt::ISODate))) {
+                fresh = false;
+                break;
+            }
+        }
+        if (fresh)
             starts << d;
     }
     return starts;
@@ -267,14 +273,17 @@ QVariantList CycleStore::history(int limit) const
             m["cycleLength"] = dates[i].daysTo(dates[i + 1]);
         else
             m["cycleLength"] = 0;
-        // Consecutive flow>=2 days from this start: what "the period" lasted.
-        int len = 0;
-        QDate d = dates[i];
-        for (int k = 0; k < 15; ++k) {
-            if (getDay(d.toString(Qt::ISODate))["flow"].toInt() >= 2) {
-                ++len;
-                d = d.addDays(1);
-            } else break;
+        // Span of flow>=2 days from this start, tolerating the same <=2-day
+        // logging gaps: stops after 3 consecutive flow-free days.
+        int len = 1;
+        int gap = 0;
+        for (int k = 1; k <= 20; ++k) {
+            const QDate nd = dates[i].addDays(k);
+            if (nd > QDate::currentDate()) break;
+            if (getDay(nd.toString(Qt::ISODate))["flow"].toInt() >= 2) {
+                len = k + 1;
+                gap = 0;
+            } else if (++gap > 2) break;
         }
         m["days"] = len;
         out << m;

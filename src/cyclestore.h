@@ -7,8 +7,9 @@
 #include <QVariantMap>
 
 // Flow levels: 0 none, 1 spotting, 2 light, 3 medium, 4 heavy.
-// A "period day" is flow >= 2. Period start = period day whose
-// previous calendar day is not a period day.
+// A "period day" is flow >= 2. A period starts on a period day whose two
+// previous days were both period-free: isolated unlogged gap days do not
+// split one period into two (and so never seed bogus 2-day "cycles").
 class CycleStore : public QObject
 {
     Q_OBJECT

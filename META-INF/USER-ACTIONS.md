@@ -38,6 +38,7 @@ Domain primer: Cycle Day 1 = first bleeding day. Cycle length = Day 1 to next Da
 - List past periods (start, end, length).
 - Check avg/min/max cycle and period length, variability.
 - Delete a cycle, verify predictions recalculate.
+- Single unlogged gap days inside a period do not split it: logging Sep 12 + Sep 14 (skipping 13) counts as one period starting Sep 12.
 
 ## 7. Reminders (local only)
 - Toggle period-due, PMS-starting, log nudge, overdue notices.
