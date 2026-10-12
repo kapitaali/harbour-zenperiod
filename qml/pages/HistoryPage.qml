@@ -43,6 +43,7 @@ Page {
                 color: Theme.primaryColor
                 text: modelData.start + (modelData.cycleLength > 0 ? " · " + qsTr("%n day cycle", "", modelData.cycleLength) : "")
             }
+            onClicked: pageStack.push(Qt.resolvedUrl("LogPage.qml"), { date: modelData.start })
         }
         VerticalScrollDecorator {}
     }

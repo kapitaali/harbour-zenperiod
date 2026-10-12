@@ -11,9 +11,14 @@ Page {
     property int shownMonth: new Date().getMonth() + 1
     property var pred: store.predictions()
     property string notifiedKey: ""
+    // Bumped on every store change so calendar cell bindings re-query.
+    // Without this, getDay()/isPredicted*() calls never re-evaluate and
+    // deleted entries keep their markers until the month is switched.
+    property int dataVersion: 0
 
     function refresh() {
         pred = store.predictions()
+        dataVersion++
         // Local-only due/overdue nudge, posted at most once per
         // prediction state. Full background reminders (KeepAlive) are v2.
         if (pred.daysToNext !== undefined && pred.daysToNext <= 1 && pred.cycleDay > 0) {
@@ -138,12 +143,24 @@ Page {
                         width: (parent.width - 6 * parent.spacing) / 7
                         height: width * 1.15
                         enabled: modelData !== ""
-                        property var info: modelData !== "" ? store.getDay(modelData) : null
+                        property var info: {
+                            page.dataVersion
+                            return modelData !== "" ? store.getDay(modelData) : null
+                        }
                         property bool logged: info && info.logged
                         property bool isPeriod: logged && info.flow >= 2
-                        property bool predP: modelData !== "" && store.isPredictedPeriod(modelData)
-                        property bool predS: modelData !== "" && store.isPredictedPms(modelData)
-                        property bool predO: modelData !== "" && store.isPredictedOvulation(modelData)
+                        property bool predP: {
+                            page.dataVersion
+                            return modelData !== "" && store.isPredictedPeriod(modelData)
+                        }
+                        property bool predS: {
+                            page.dataVersion
+                            return modelData !== "" && store.isPredictedPms(modelData)
+                        }
+                        property bool predO: {
+                            page.dataVersion
+                            return modelData !== "" && store.isPredictedOvulation(modelData)
+                        }
                         Rectangle {
                             anchors.fill: parent
                             radius: 6
@@ -163,9 +180,9 @@ Page {
                         // symptom dot
                         Rectangle {
                             visible: cell.logged && !cell.isPeriod
-                            anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 4 }
-                            width: 6; height: 6; radius: 3
-                            color: Theme.secondaryColor
+                            anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 6 }
+                            width: 10; height: 10; radius: 5
+                            color: Theme.primaryColor
                         }
                         // ovulation bar
                         Rectangle {
