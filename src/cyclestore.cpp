@@ -378,3 +378,8 @@ void CycleStore::clearAll()
     emit settingsChanged();
     emit dataChanged();
 }
+
+QString CycleStore::buildStamp() const
+{
+    return QStringLiteral(__DATE__ " " __TIME__);
+}

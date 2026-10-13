@@ -454,6 +454,11 @@
         <source>Deleting all entries</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="114"/>
+        <source>Build %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>cycle</name>

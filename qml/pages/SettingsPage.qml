@@ -108,6 +108,11 @@ Page {
                 color: Theme.secondaryColor
                 onClicked: remorse.execute(qsTr("Deleting all entries"), function() { store.clearAll() })
             }
+            Label {
+                x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin
+                color: Theme.secondaryColor; font.pixelSize: Theme.fontSizeTiny
+                text: qsTr("Build %1").arg(store.buildStamp())
+            }
         }
         VerticalScrollDecorator {}
     }

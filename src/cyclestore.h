@@ -42,6 +42,7 @@ public:
     Q_INVOKABLE bool isPredictedOvulation(const QString &isoDate) const;
     Q_INVOKABLE bool isOnboarded() const;
     Q_INVOKABLE void completeOnboarding(const QString &lastStart, int cycle, int period);
+    Q_INVOKABLE QString buildStamp() const;
     Q_INVOKABLE void clearAll();
 
 Q_SIGNALS:

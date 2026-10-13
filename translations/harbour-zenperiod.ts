@@ -370,6 +370,10 @@
         <source>Ovulation ≈ next period minus this, 10–18</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Build %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>cycle</name>

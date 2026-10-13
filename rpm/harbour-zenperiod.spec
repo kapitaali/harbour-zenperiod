@@ -1,7 +1,7 @@
 Name:       harbour-zenperiod
 Summary:    Privacy-focused period and PMS tracker, fully offline
 Version:    0.1
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    GPL-3.0-only
 URL:        http://example.org/
