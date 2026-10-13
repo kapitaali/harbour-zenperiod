@@ -6,6 +6,5 @@ Icon=harbour-zenperiod
 Exec=harbour-zenperiod
 
 [X-Sailjail]
-Permissions=Notifications
 OrganizationName=org.zenperiod
 ApplicationName=harbour-zenperiod

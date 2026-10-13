@@ -30,7 +30,7 @@ Native Silica app for logging periods, PMS symptoms, and viewing predictions. Mu
   ```
 
 ## 3. Privacy architecture
-- `[X-Sailjail]` permissions: `Notifications;Reminders` only. No `Internet`, `Location`, `Contacts`, `Calendar`, `Pictures`.
+- `[X-Sailjail]` permissions: none at all (not even `Notifications`, which needs no permission). No `Internet`, `Location`, `Contacts`, `Calendar`, `Pictures`.
 - No analytics SDKs, no third-party QML imports. Only `Sailfish.Silica`, `QtQuick`, `QtSql`, `Nemo.Notifications` (all Harbour-allowed).
 - No account, no network syscalls. Works in airplane mode.
 - Secrets/PIN via `Sailfish.Secrets` or salted hash, never plaintext. Note: Jolla C2 has no fingerprint sensor, do not promise biometrics.
