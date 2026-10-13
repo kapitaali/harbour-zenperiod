@@ -26,10 +26,12 @@ from your logged data. Cycle predictions are not medical advice.
 Everything stays in the app sandbox SQLite file — the app declares zero
 Sailjail permissions, not even network access.
 
-## 4. Graphics (TODO before upload)
-- Screenshots: minimum 1080×1920 portrait. Phone shots are 720×1600 → upscale 1.5× to 1080×2400 or re-shoot. Suggested set: calendar with legend, day-log top (Flow list), history list, settings.
-- Cover banner: 1080×540 (2:1), separate field from screenshots — do not cross-upload.
-- App icon ships inside the RPM (86/108/128/172px PNGs) — nothing to upload separately.
+## 4. Graphics (done 2026-10-13, in `~/Jolla/store-screenshots/harbour-zenperiod/`)
+- `zenperiod-calendar-1080x2400.png`, `zenperiod-settings-1080x2400.png`,
+  `zenperiod-log-1080x2400.png` — upscaled 1.5× LANCZOS from 1032×2272 phone
+  shots; 1080×2378 clears the 1080×1920 minimum. Upload as screenshots.
+- `zenperiod-banner-1080x540.png` — cover banner (icon rose-circle motif +
+  tagline), exact 1080×540. Upload to the banner field, not screenshots.
 
 ## 5. Privacy (paste link + text)
 - Link `PRIVACY.md` from the submission form (required for personal-data apps).
