@@ -15,6 +15,7 @@ class CycleStore : public QObject
     Q_OBJECT
     Q_PROPERTY(int usualCycle READ usualCycle WRITE setUsualCycle NOTIFY settingsChanged)
     Q_PROPERTY(int usualPeriod READ usualPeriod WRITE setUsualPeriod NOTIFY settingsChanged)
+    Q_PROPERTY(int usualLuteal READ usualLuteal WRITE setUsualLuteal NOTIFY settingsChanged)
 
 public:
     explicit CycleStore(QObject *parent = nullptr);
