@@ -5,7 +5,7 @@ Domain primer: Cycle Day 1 = first bleeding day. Cycle length = Day 1 to next Da
 - Fresh install opens the Welcome page (not the calendar).
 - Read local-only statement, pick last period start (DatePicker, defaults to today), set usual cycle/period with +/-.
 - Future start date blocks Start; "Skip for now" (pulley) completes without logging.
-- After Start/Skip, calendar shows; relaunch never shows Welcome again (until wipe + reinstall).
+- After Start/Skip, calendar shows; relaunch never shows Welcome again (until in-app wipe, which replays it).
 - Onboarding logs the start date as one medium-flow day: check predictions use it as last start.
 
 ## 2. Log period day
@@ -57,7 +57,7 @@ Domain primer: Cycle Day 1 = first bleeding day. Cycle length = Day 1 to next Da
 ## 10. Data / privacy
 - Export JSON/CSV to Documents on demand, inspect content.
 - Import on fresh install, verify restore.
-- Wipe all data, verify empty calendar + reset predictions.
+- Wipe all data, verify empty calendar + reset predictions + Welcome replays (uninstall alone does not clear data: Sailfish leaves the app data dir behind).
 - Airplane mode: all features work.
 - Verify `.desktop` has no `Internet` permission.
 - Reinstall: data gone, no cloud restore.

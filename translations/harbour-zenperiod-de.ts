@@ -451,11 +451,11 @@
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="109"/>
-        <source>Deleting all entries</source>
+        <source>Deleting everything and restarting setup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="114"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
         <source>Build %1</source>
         <translation type="unfinished"></translation>
     </message>

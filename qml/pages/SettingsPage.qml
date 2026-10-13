@@ -106,7 +106,10 @@ Page {
                 x: Theme.horizontalPageMargin
                 text: qsTr("Wipe all data")
                 color: Theme.secondaryColor
-                onClicked: remorse.execute(qsTr("Deleting all entries"), function() { store.clearAll() })
+                onClicked: remorse.execute(qsTr("Deleting everything and restarting setup"), function() {
+                    store.clearAll()
+                    pageStack.replace(Qt.resolvedUrl("OnboardingPage.qml"))
+                })
             }
             Label {
                 x: Theme.horizontalPageMargin; width: parent.width - 2 * Theme.horizontalPageMargin

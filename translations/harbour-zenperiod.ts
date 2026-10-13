@@ -346,10 +346,6 @@
         <source>Wipe all data</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Deleting all entries</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message numerus="yes">
         <source>Period: %n day(s)</source>
         <translation type="unfinished">
@@ -372,6 +368,10 @@
     </message>
     <message>
         <source>Build %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting everything and restarting setup</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

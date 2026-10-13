@@ -369,12 +369,14 @@ void CycleStore::clearAll()
 {
     QSqlQuery q(QSqlDatabase::database(kConn));
     q.exec("DELETE FROM days");
-    // Factory reset: entries, usual lengths, nothing else half-kept.
-    // The onboarded flag survives so wipe does not replay the Welcome page.
+    // True factory reset: entries, usual lengths, and the onboarded flag.
+    // Sailfish leaves ~/.local/share behind on uninstall, so reinstall
+    // alone never replays onboarding; in-app wipe is the reset path.
+    // SettingsPage navigates back to OnboardingPage after calling this.
     m_usualCycle = 28;
     m_usualPeriod = 5;
     m_usualLuteal = 14;
-    q.exec("DELETE FROM settings WHERE key IN ('usualCycle','usualPeriod','usualLuteal')");
+    q.exec("DELETE FROM settings");
     emit settingsChanged();
     emit dataChanged();
 }
